@@ -1,0 +1,30 @@
+
+public abstract class Perfil {
+	private String email;
+	private String pais;
+	private String cidade;
+	private String fusoHorario;
+	private String emailOpcional;
+	private String genero;
+	
+	public Perfil(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
+		this.email = email;
+		this.pais = pais;
+		this.cidade = cidade;
+		this.fusoHorario = fusoHorario;
+		this.emailOpcional = emailOpcional;
+		this.genero = genero;
+	}
+	
+	public Perfil() {
+		
+	}
+	
+	public void cadastrarInfo(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
+		
+	}
+	
+	public void atualizarInfo(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
+		
+	}
+}
