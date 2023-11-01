@@ -13,8 +13,7 @@ public class Discente extends Perfil {
 		
 	}
 	
-	public void mostrarNotas() {
-		
+	public String toString() {
+		return "Notas: " + notas;
 	}
-
 }
