@@ -1,11 +1,10 @@
-
 public abstract class Perfil {
-	private String email;
-	private String pais;
-	private String cidade;
-	private String fusoHorario;
-	private String emailOpcional;
-	private String genero;
+	protected String email;
+	protected String pais;
+	protected String cidade;
+	protected String fusoHorario;
+	protected String emailOpcional;
+	protected String genero;
 	
 	public Perfil(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
 		this.email = email;
@@ -19,12 +18,28 @@ public abstract class Perfil {
 	public Perfil() {
 		
 	}
-	
-	public void cadastrarInfo(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
-		
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
-	public void atualizarInfo(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
-		
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public void setFusoHorario(String fusoHorario) {
+		this.fusoHorario = fusoHorario;
+	}
+
+	public void setEmailOpcional(String emailOpcional) {
+		this.emailOpcional = emailOpcional;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 }
