@@ -1,17 +1,11 @@
-
 public class Docente extends Perfil {
 	private String matriculaProf;
 	
-	public Docente(String matrivulaProf, String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
+	public Docente(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
 		super(email, pais, cidade, fusoHorario, emailOpcional, genero);
+	}
+	
+	public Docente(String matriculaProf) {
 		this.matriculaProf = matriculaProf;
-	}
-	
-	public Docente() {
-		
-	}
-	
-	public void cadastrarMatricula(String matriculaProf) {
-		
 	}
 }
