@@ -1,0 +1,95 @@
+package Dados;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Aprender3.Discente;
+import Aprender3.Docente;
+import Aprender3.Materia;
+import Aprender3.Nota;
+
+public class Dados {
+	
+    //Dados para "Mostrar informações de discente"
+    private Discente discente;
+	
+	//Dados para "mostrar notas de discente"
+    private Nota nota1;
+    private Nota nota2;
+    private Nota nota3;
+    private Nota nota4;
+    private Nota nota5;
+    
+    //Dados para "Mostrar materias de discente"
+    private Materia materia1;
+    private Materia materia2;
+    private Materia materia3;
+    private Materia materia4;
+    private Materia materia5;
+    
+    //Dados para "Mostrar informaçõed do docente"
+    private Docente docente;
+    
+    //Dados para "Mostrar materias ministradas do docente"
+    private Materia materia1prof;
+    private Materia materia2prof;
+
+    public Dados() {
+    	this.discente = new Discente("Pedro Henique" , "Pedrohenr123@gmail,com", 
+    			"Brasil", "Brasilia", "Brasilia", "pedroll@outlook.com", "masculino" , 
+    			"Engenharia de software", null);
+    	
+        this.nota1 = new Nota(8.5f, "Orientação à Objetos", "12345678");
+        this.nota2 = new Nota(7.8f, "Estrutura de Dados", "12345678");
+        this.nota3 = new Nota(2.8f, "Cálculo 1", "12345678");
+        this.nota4 = new Nota(9.5f, "Humanidade e cidadania", "12345678");
+        this.nota5 = new Nota(3.9f, "Física 1", "12345678");
+        
+        this.materia1 = new Materia("FGA0066", "Orientação à Objetos", "2");
+        this.materia2 = new Materia("FGA01257", "Estrutura de Dados", "2");
+        this.materia3 = new Materia("MAT1234", "Cálculo 1", "2");
+        this.materia4 = new Materia("FGA8769", "Humanidade e cidadania", "2");
+        this.materia5 = new Materia("FIS0001", "Física 1", "2"); 
+        
+        this.docente = new Docente("Fabiola", "fabiola1862@gmail.com", "Brasil", 
+        		"Brasilia", "Brsilia", "FabiolaMendezz543@gmail.com", "Feminino" , 
+        		"AP028591");
+        
+        this.materia1prof = new Materia("FGA0066", "Orientação à Objetos", "2");
+        this.materia2prof = new Materia("CIC1578", "Estrutura de Dados 1", "2");
+    }
+        
+    	public String toString() { //Mostrar informações de discente
+    		return "Seus dados: \n" + 
+    				discente.toString() + "\n";
+    	}
+    
+        public String toString2() { //mostrar notas de discente
+            return "Suas notas: \n" +
+                    nota1.toString() + "\n" + 
+            		nota2.toString() + "\n" + 
+            		nota3.toString() + "\n" +
+            		nota4.toString() + "\n" +
+            		nota5.toString() + "\n"; 
+        }
+        
+        public String toString3() { //Mostrar materias de discente
+        	return "Suas matérias são: \n" +
+        			materia1.toString() + "\n" +
+        			materia2.toString() + "\n" +
+        			materia3.toString() + "\n" +
+        			materia4.toString() + "\n" +
+        			materia5.toString() + "\n";		
+        }   
+        
+        public String toString4() { //Mostrar informações do docente
+    		return "Seus dados: \n" + 
+    				docente.toString() + "\n";
+    	}
+        
+        public String toString5() { //Mostrar materias ministradas do docente"
+        	return "Suas matérias ministradas atualmente: \n" + 
+        materia1prof.toString() + "\n" +
+        materia2prof.toString() + "\n";
+        }
+    }
