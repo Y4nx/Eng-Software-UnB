@@ -1,0 +1,33 @@
+package Aprender3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Evento {
+    private String nomeEvento;
+    private String dataEvento;
+
+    public Evento(String nomeEvento, String dataEvento) {
+        this.nomeEvento = nomeEvento;
+        this.dataEvento = dataEvento;
+    }
+
+    public static Evento criarEvento(String nomeEvento, String dataEvento) {
+        return new Evento(nomeEvento, dataEvento);
+    }
+
+    public void mostrarEvento() {
+        System.out.println("Nome do Evento: " + nomeEvento);
+        System.out.println("Data do Evento: " + dataEvento);
+    }
+
+    public void atualizarEvento(String novaDataEvento) {
+        this.dataEvento = novaDataEvento;
+        System.out.println("Data do evento atualizada para: " + novaDataEvento);
+    }
+
+    public static void deletarEvento(List<Evento> eventos, Evento eventoParaDeletar) {
+        eventos.remove(eventoParaDeletar);
+        System.out.println("Evento deletado com sucesso.");
+    }
+}
