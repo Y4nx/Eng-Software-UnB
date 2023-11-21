@@ -1,0 +1,318 @@
+package Main;
+
+import Dados.Dados;
+import Aprender3.Docente;
+import Aprender3.Discente;
+import Aprender3.Materia;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean sair = false;
+
+        while (!sair) {
+            System.out.println("Bem-vindo ao Aprender3!");
+            System.out.println("01 -- Entrar como aluno");
+            System.out.println("02 -- Entrar como professor");
+            System.out.println("03 -- Sair");
+
+            System.out.print("Digite o número: ");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                	System.out.print("\n");
+                	System.out.println("Você escolheu entrar como aluno.");
+                    menuAluno();
+                    break;
+
+                case 2:
+                	System.out.print("\n");
+                	System.out.println("Você escolheu entrar como professor.");
+                    menuProfessor();
+                    break;
+
+                case 3:
+                	System.out.print("\n");
+                	System.out.println("Saindo do Aprender3. Até logo!");
+                    sair = true;
+                    break;
+
+                default:
+                	System.out.print("\n");
+                	System.out.println("Opção inválida.");
+                    break;
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void menuAluno() {
+        boolean voltar = false;
+        while (!voltar) {
+        	System.out.print("\n");
+        	System.out.println("01 -- Cadastrar informações pessoais");
+            System.out.println("02 -- Editar informações pessoais");
+            System.out.println("03 -- Mostrar suas infomações");
+            System.out.println("04 -- Mostrar suas notas");
+            System.out.println("05 -- Mostrar suas matérias");
+            System.out.println("06 -- Voltar");
+            System.out.print("\n");
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Digite o número: ");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 01 - "
+                			+ "Cadastrar informações pessoais do aluno.");
+                    Discente discente = new Discente("", "", "", "", "", "", "", "", "");
+                    discente.cadastrarPerfil();
+                    
+                    System.out.print("\n");
+                    System.out.println("Dados do perfil cadastrados:");
+                    System.out.println("Matrícula: " + discente.getMatricula());
+                    System.out.println("Email: " + discente.getEmail());
+                    System.out.println("País: " + discente.getPais());
+                    System.out.println("Cidade: " + discente.getCidade());
+                    System.out.println("Fuso Horário: " + discente.getFusoHorario());
+                    System.out.println("Email Opcional: " + discente.getEmailOpcional());
+                    System.out.println("Gênero: " + discente.getGenero());
+                    System.out.print("\n");
+                    
+                    break;
+
+                case 2:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 02 - "
+                			+ "Editar informações pessoais do aluno.");             
+                    Discente discente2 = new Discente("", "", "", "", "", "", "", "", "");
+                    discente2.atualizarInfo();
+                    
+                    System.out.print("\n");
+                    System.out.println("\nAtualizando informações:");
+                    System.out.println("\nDados do perfil atualizados:");
+                    System.out.println("Matrícula: " + discente2.getMatricula());
+                    System.out.println("Email: " + discente2.getEmail());
+                    System.out.println("País: " + discente2.getPais());
+                    System.out.println("Cidade: " + discente2.getCidade());
+                    System.out.println("Fuso Horário: " + discente2.getFusoHorario());
+                    System.out.println("Email Opcional: " + discente2.getEmailOpcional());
+                    System.out.println("Gênero: " + discente2.getGenero());
+                    System.out.print("\n");
+                    
+                    break;
+
+                case 3:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 03 - "
+                			+ "Mostrar informações do aluno.");
+                    
+                    Dados dados = new Dados();
+                    System.out.println(dados.toString());
+                    
+                    break;
+
+                case 4:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 04 - "
+                			+ "Mostrar notas do aluno.");   
+                	
+                	Dados dados2 = new Dados();
+                    System.out.println(dados2.toString2());
+                    
+                    break;
+
+                case 5:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 05 - "
+                			+ "Mostrar matérias do aluno.");
+                	
+                	Dados dados3 = new Dados();
+                    System.out.println(dados3.toString3());
+                	
+                    break;
+
+                case 6:
+                    voltar = true;
+                    System.out.print("\n");
+                    System.out.println("Voltando para o menu principal.");
+                    break;
+
+                default:
+                	System.out.print("\n");
+                	System.out.println("Opção inválida.");
+                    break;
+            }
+        }
+    }
+
+    private static void menuProfessor() {
+        boolean voltar = false;
+        while (!voltar) {
+        	System.out.print("\n");
+        	System.out.println("01 -- Cadastrar informações pessoais");
+            System.out.println("02 -- Editar informações pessoais");
+            System.out.println("03 -- Mostrar suas informações");
+            System.out.println("04 -- Mostrar matérias ministradas");
+            System.out.println("05 -- Criar matéria");
+            System.out.println("06 -- Editar dados das matérias");
+            System.out.println("07 -- Deletar matéria");
+            System.out.println("08 -- Voltar");
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Digite o número: ");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 01 - "
+                			+ "Cadastrar informações pessoais do professor.");
+                	
+                    Docente docente = new Docente("", "", "", "", "", "", "", "");
+                    docente.cadastrarPerfil();
+                    
+                    System.out.print("\n");
+                    System.out.println("Dados do perfil cadastrados:");
+                    System.out.println("Matrícula: " + docente.getMatriculaProf());
+                    System.out.println("Email: " + docente.getEmail());
+                    System.out.println("País: " + docente.getPais());
+                    System.out.println("Cidade: " + docente.getCidade());
+                    System.out.println("Fuso Horário: " + docente.getFusoHorario());
+                    System.out.println("Email Opcional: " + docente.getEmailOpcional());
+                    System.out.println("Gênero: " + docente.getGenero());
+                    System.out.print("\n");
+                    
+                    break;
+
+                case 2:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 02 - "
+                			+ "Editar informações pessoais do professor."); 
+                	
+                    Docente docente2 = new Docente("", "", "", "", "", "", "", "");
+                    docente2.atualizarInfo();
+                    
+                    System.out.print("\n");
+                    System.out.println("\nAtualizando informações:");
+                    System.out.println("\nDados do perfil atualizados:");
+                    System.out.println("Matrícula: " + docente2.getMatriculaProf());
+                    System.out.println("Email: " + docente2.getEmail());
+                    System.out.println("País: " + docente2.getPais());
+                    System.out.println("Cidade: " + docente2.getCidade());
+                    System.out.println("Fuso Horário: " + docente2.getFusoHorario());
+                    System.out.println("Email Opcional: " + docente2.getEmailOpcional());
+                    System.out.println("Gênero: " + docente2.getGenero());
+                    System.out.print("\n");
+                    
+                    break;
+
+                case 3:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 03 - "
+                			+ "Mostrar informações do professor.");
+                	
+                    Dados dados4 = new Dados();
+                    System.out.println(dados4.toString4());
+                    
+                    break;
+
+                case 4:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 04 - "
+                			+ "Mostrar matérias ministradas pelo professor.");      
+                	
+                	Dados dados = new Dados();
+                    System.out.println(dados.toString5());
+                	
+                    break;
+
+                case 5:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 05 - "
+                			+ "Criar matéria.");	
+                	
+                	Materia materia = new Materia("", "", "");
+                    materia.criarMateria();
+                    
+                    System.out.print("\n");
+                    System.out.println("Nova matéria cadastrada:");
+                    System.out.println("Matrícula: " + materia.getId());
+                    System.out.println("Email: " + materia.getNome());
+                    System.out.println("País: " + materia.getDescricao());
+                    System.out.println("Cidade: " + materia.getPeriodo());
+                    System.out.println("Fuso Horário: " + materia.getChaveMateria());
+                    System.out.println("Email Opcional: " + materia.getCategoria());
+                    System.out.print("\n");     
+                	
+                    break;
+
+                case 6:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 06 - "
+                			+ "Editar dados das matérias.");
+                	
+                	Materia materia2 = new Materia("", "", "");
+                    materia2.criarMateria();
+                    
+                    System.out.print("\n");
+                    System.out.println("Matéria atualizada:");
+                    System.out.println("Matrícula: " + materia2.getId());
+                    System.out.println("Email: " + materia2.getNome());
+                    System.out.println("País: " + materia2.getDescricao());
+                    System.out.println("Cidade: " + materia2.getPeriodo());
+                    System.out.println("Fuso Horário: " + materia2.getChaveMateria());
+                    System.out.println("Email Opcional: " + materia2.getCategoria());
+                	
+                    break;
+
+                case 7:
+                	System.out.print("\n");
+                	System.out.println("Executando opção 07 - "
+                			+ "Deletar matéria.");
+                	System.out.println("\n Qual matéria deseja deletar?");
+                	
+                	Dados dados2 = new Dados();
+                    System.out.println(dados2.toString5());
+                    
+                    System.out.print("Digite o número: ");
+                    int opcao2 = scanner.nextInt();
+
+                    switch (opcao2) {
+                    case 1:
+                    	System.out.print("Materia excluida com sucesso \n");
+                    	break;
+                    	
+                    case 2: 
+                    	System.out.print("Materia excluida com sucesso \n");
+                    	break;
+                    	
+                    default:
+                    	System.out.print("\n");
+                    	System.out.println("Opção inválida.");
+                        break;
+                    }
+                    
+                    break;   	
+
+                case 8:
+                	System.out.print("\n");
+                	voltar = true;
+                    System.out.println("Voltando para o menu principal.");
+                    break;
+
+                default:
+                	System.out.print("\n");
+                	System.out.println("Opção inválida.");
+                    break;
+            }
+        }
+    }
+}
