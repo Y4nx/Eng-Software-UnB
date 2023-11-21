@@ -1,45 +1,82 @@
+package Aprender3;
+
 public abstract class Perfil {
-	protected String email;
-	protected String pais;
-	protected String cidade;
-	protected String fusoHorario;
-	protected String emailOpcional;
-	protected String genero;
-	
-	public Perfil(String email, String pais, String cidade, String fusoHorario, String emailOpcional, String genero) {
-		this.email = email;
-		this.pais = pais;
-		this.cidade = cidade;
-		this.fusoHorario = fusoHorario;
-		this.emailOpcional = emailOpcional;
-		this.genero = genero;
+	protected String nome;
+    protected String email;
+    protected String pais;
+    protected String cidade;
+    protected String fusoHorario;
+    protected String emailOpcional;
+    protected String genero;
+
+    public Perfil(String nome, String email, String pais, String cidade, 
+    		String fusoHorario, String emailOpcional, String genero) {
+        this.nome = nome;
+    	this.email = email;
+        this.pais = pais;
+        this.cidade = cidade;
+        this.fusoHorario = fusoHorario;
+        this.emailOpcional = emailOpcional;
+        this.genero = genero;
+    }
+
+    public String getNome() {
+		return nome;
 	}
-	
-	public Perfil() {
-		
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+    
+	public String getEmail() {
+		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	public String getPais() {
+		return pais;
+	}
+
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+
+	public String getCidade() {
+		return cidade;
 	}
 
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
+	public String getFusoHorario() {
+		return fusoHorario;
+	}
+
 	public void setFusoHorario(String fusoHorario) {
 		this.fusoHorario = fusoHorario;
+	}
+
+	public String getEmailOpcional() {
+		return emailOpcional;
 	}
 
 	public void setEmailOpcional(String emailOpcional) {
 		this.emailOpcional = emailOpcional;
 	}
 
+	public String getGenero() {
+		return genero;
+	}
+
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
+
+	public abstract void cadastrarPerfil();
+	
+	public abstract void atualizarInfo();
 }
